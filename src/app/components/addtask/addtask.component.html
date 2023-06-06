@@ -1,0 +1,33 @@
+<h2>Pridanie nového tasku</h2>
+<form action="" class="addtask" (ngSubmit)="addTaskItem(listitem, $event)" >
+<mat-form-field class="addtask-formfield">
+    <mat-label>Názov tasku</mat-label>
+    <input 
+    name="taskname"
+    matInput 
+    type="text"
+    #taskname
+    >
+</mat-form-field>
+<mat-form-field class="addtask-formfield">
+    <mat-label>Popis tasku</mat-label>
+    <textarea 
+    name="tasktext"
+    matInput 
+    #tasktext
+    placeholder=""></textarea>
+</mat-form-field>
+<mat-form-field class="addtask-formfield">
+    <mat-label>Deadline</mat-label>
+    <input matInput #deadline name="deadline" [matDatepicker]="picker">
+    <mat-hint>DD/MM/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+<button mat-raised-button
+    class="addtask-button"
+    color="primary"
+    type="submit">
+    Pridať
+</button>
+</form>

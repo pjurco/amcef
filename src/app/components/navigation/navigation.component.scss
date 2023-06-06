@@ -1,0 +1,21 @@
+@import './../../../assets/variables';
+
+
+nav {
+  display: flex;
+  padding: 20px 10px;
+  a {
+    padding: 10px 5px;
+    text-decoration: none;
+    color: $black;
+    transition: $transition-base;
+    cursor: pointer;
+    &:hover {
+      color: $green;
+    }
+    &.active {
+      font-weight: bold;
+      border-bottom: 1px solid $green;
+    }
+  }
+}

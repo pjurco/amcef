@@ -1,0 +1,59 @@
+<h2>Zoznam Todo listov</h2>
+<div class="filter-wrap">
+  <mat-form-field >
+    <mat-label>Vyhladaj task </mat-label>
+    <input matInput #searchInput  (input)="searchSubmit(searchInput.value)" placeholder="Zadaj hladany vyraz" value="">
+    <mat-icon  matSuffix  >search</mat-icon>
+    <mat-hint align="start"><strong>Vyhladaj task podla nazvu alebo popisu</strong> </mat-hint>
+    
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Filter:</mat-label>
+    <mat-select [(ngModel)]="selectedFilter" >
+      <mat-option value="all">Všetky</mat-option>
+      <mat-option value="completed">Dokončené</mat-option>
+      <mat-option value="notCompleted">Nedokončené</mat-option>
+    </mat-select>
+  </mat-form-field>  
+</div>
+<mat-tab-group dynamicHeight>
+  <mat-tab *ngFor="let listitem of todolist" [label]="listitem.name">
+    <div class="tab-body-wrap">
+      <header class="tab-header">
+        <h2>Zoznam taskov pre {{listitem.name}}</h2> 
+        <button mat-raised-button
+          color="warn"
+          (click)="remove(listitem)">
+          Vymazať zoznam
+        </button>
+      </header>
+      
+      <div class="tab-items-wrap">
+        <task [tasks]="listitem.task" [selectedTasks]="selectedFilter" [searchString]="searchString" (removeTask)="removeTaskItem($event, listitem)"></task>
+        <ngx-spinner [fullScreen]="false" type="ball-scale-multiple"></ngx-spinner>
+      </div>
+      <addtask [listitem]="[listitem]" ></addtask>
+    </div>
+    
+  </mat-tab>
+</mat-tab-group>
+<mat-divider></mat-divider>
+<h3>Pridanie nového "Todo" zoznamu</h3>
+<form action="" class="addtodolist-form" addtodolistinputForm (submit)="addTodoItem(addtodolistinput.value, $event)" >
+  <mat-form-field class="">
+    <mat-label>Nový Todo</mat-label>
+    <input 
+    matInput 
+    type="text"
+    [formControl]="addtodolistinputFormControl"
+    #addtodolistinput
+    required
+    >
+    <mat-error *ngIf="addtodolistinputFormControl.hasError('required')">
+      Pole je <strong>povinné</strong>
+    </mat-error>
+    <mat-hint align="start"><strong>Pre pridanie stlač "enter"</strong> </mat-hint>
+  </mat-form-field>
+  
+</form>
+

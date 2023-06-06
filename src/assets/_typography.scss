@@ -1,0 +1,139 @@
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+  color: $secondary;
+
+}
+
+@mixin body {
+  color: $text;
+  font-size: toRem(16);
+  line-height: 24px;
+  /* @media(min-width: 1200px) { 
+    font-size: 2rem;
+    line-height: 35px;
+  } */
+}
+
+@mixin h1 {
+  font-size: toRem(32);
+  margin: 0;
+  font-weight: bold;
+  //font-family: 'Avaline Script';
+  @media(min-width: 992px) { 
+    font-size: toRem(36);
+  }
+  @media(min-width: 1400px) { 
+    font-size: toRem(48);
+    line-height: 60px;
+  }
+  /* @include media-breakpoint-up(xxl) { 
+    font-size: 7.2rem;
+    line-height: 99px;
+  } */
+}
+
+@mixin h2 {
+  font-size: toRem(28);
+  font-weight: bold;
+  @media(min-width: 992px) { 
+    font-size: toRem(34);
+  }
+  @media(min-width: 1200px) { 
+    font-size: toRem(36);
+  }
+}
+
+@mixin h3 {
+  font-size: toRem(28);
+  margin: 0;
+  margin-bottom: 15px;
+  font-weight: bold;
+  @media(min-width: 1200px) { 
+    font-size: toRem(32);
+  }
+}
+
+@mixin h4 {
+  font-size: toRem(28);
+  margin: 0;
+  margin-bottom: 0;
+  font-weight: bold;
+  @media(min-width: 1200px) { 
+    font-size: toRem(32);
+  }
+}
+
+@mixin h5 {
+  font-size: toRem(24);
+  margin: 0;
+  margin-bottom: 0;
+  font-weight: bold;
+  @media(min-width: 1200px) { 
+    font-size: toRem(24);
+  }
+}
+
+@mixin h6 {
+  font-size: toRem(18);
+  margin: 0;
+  margin-bottom: 0;
+  font-weight: bold;
+  @media(min-width: 1200px) { 
+    font-size: toRem(24);
+  }
+}
+
+
+
+body {
+  @include body;
+}
+
+h1, .h1 {
+  @include h1;
+}
+
+h2, .h2 {
+  @include h2;
+}
+
+h3, .h3 {
+  @include h3;
+}
+
+h4, .h4 {
+  @include h4;
+}
+
+h5, .h5 {
+  @include h5;
+}
+h6, .h6 {
+  @include h6;
+}
+
+
+p, ul, input {
+  @include body;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+table {
+  color: $text;
+}
+
+td, th {
+  @include body;
+}
+
+a {
+  @include body;
+}
+
+small {
+  font-size: toRem(12);
+}
+
+input {
+  margin-bottom: 10px;
+}

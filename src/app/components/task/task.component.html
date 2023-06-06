@@ -1,0 +1,27 @@
+<mat-list>
+  <mat-list-item *ngFor="let task of tasks | selectedTasks: selectedTasks: searchString"  [ngClass]="{'green': task.done == true}">
+      <mat-icon matListItemIcon>folder</mat-icon>
+      <span matListItemTitle>{{task.title | uppercase}}</span>
+      <span matListItemLine>{{task.text}}</span>
+      <span matListItemLine>{{task.deadline}}</span>
+      <span matListItemLine>
+      <mat-slide-toggle [(ngModel)]="task.done">Done ?</mat-slide-toggle>  
+      </span>
+      <span matListItemMeta>
+      <div class="mat-list-meta-items">
+          <button mat-icon-button (click)="remove(task)" >
+          <mat-icon color="warn"  >cancel</mat-icon>
+          </button>
+          
+      </div>
+      </span>
+  </mat-list-item>
+  <mat-list-item *ngIf="((tasks | selectedTasksCount: selectedTasks: searchString) == 0) && searchString != ''"  class="red">
+      <mat-icon matListItemIcon></mat-icon>
+      <span matListItemTitle>Zial takyto task sme nenasli</span>
+      <span matListItemLine>Skuste zadat iny hladany vyraz</span> 
+      <span matListItemLine></span>
+      <span matListItemMeta>
+      </span>
+  </mat-list-item>
+</mat-list>

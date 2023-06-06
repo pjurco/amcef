@@ -1,0 +1,32 @@
+<div class="login-form-wrap">
+  <h2>Prihlásenie do aplikácie</h2>
+  <form (ngSubmit)="onSubmit()">
+    <mat-form-field class="">
+      <mat-label>Email</mat-label>
+      <input 
+      matInput 
+      type="email"
+      [(ngModel)]="email" name="email" placeholder="Email"
+      #emaillogin
+      required
+      >
+    </mat-form-field>
+    <mat-form-field class="">
+      <mat-label>Password</mat-label>
+      <input 
+      matInput 
+      type="password"
+      [(ngModel)]="password" name="password" placeholder="Password"
+      #passlogin
+      required
+      >
+    </mat-form-field>
+    <button mat-raised-button
+      color="warn"
+      type="submit">
+      Login
+    </button>
+  </form>  
+  <p><small>Login: jozko@pietro.sk</small></p>
+  <p><small>Pass: ULL!g_S_!@p7q5K</small></p>
+</div>

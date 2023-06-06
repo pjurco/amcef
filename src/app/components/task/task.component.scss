@@ -1,0 +1,25 @@
+@import './../../../assets/variables';
+@import './../../../assets/mixins';
+
+mat-list-item {
+  border: 1px solid $gray-200;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 15px;
+  &.green {
+    background-color: $green-50;
+  }
+  &.red {
+    background-color: $pink;
+  }
+}
+
+
+.mat-list-meta-items {
+
+  button {
+    padding: 0;
+    width: 24px;
+    height: 24px;
+  }
+}
