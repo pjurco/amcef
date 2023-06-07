@@ -1,0 +1,31 @@
+@function get-breakpoints($key: "md") {
+  @return map-get($container-max-widths, $key);
+}
+  
+@function toRem($value) {
+  $remValue: calc($value / 16) + rem; 
+  @return $remValue;
+}
+
+@mixin objetfit {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+@mixin objetfitcontain {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+@mixin absolutefull {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+

@@ -1,0 +1,139 @@
+// Variables
+//
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+
+// Color system
+
+// scss-docs-start gray-color-variables
+
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$green-palette: (
+ 50: #ECF7E6,
+ 100: #cfe7c4,
+ 200: #b3df9f,
+ 300: #8bbb74,
+ 400: #6fad53,
+ 500: #64B341,
+ 600: #44AA00,
+ 700: #477F2E,
+ 800: #376224,
+ 8900: #004B1F,
+ // ... continues to 900
+ contrast: (
+   50: rgba(black, 0.87),
+   100: rgba(black, 0.87),
+   200: rgba(black, 0.87),
+   300: rgba(black, 0.87),
+   400: rgba(black, 0.87),
+   500: rgba(black, 0.87),
+   600: rgba(black, 0.87),
+   700: rgba(black, 0.87),
+   800: rgba(black, 0.87),
+   900: rgba(black, 0.87),
+   // ... continues to 900
+ )
+);
+
+$my-primary: mat.define-palette($green-palette, 500);
+$my-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+$my-theme: mat.define-light-theme((
+ color: (
+   primary: $my-primary,
+   accent: $my-accent,
+ ),
+ density: 0,
+));
+
+@include mat.core-theme($my-theme);
+@include mat.button-theme($my-theme);
+
+
+$white:    #ffffff;
+$gray-100: #F9FAFB; //
+$gray-200: #DADCDF; 
+$gray-300: #C8C8C8; 
+$gray-400: #ced4da;
+$gray-500: #93979C; //
+$gray-600: #6A6E71; //
+$gray-700: #5D6063; //
+$gray-800: #3D3E40; //
+$gray-900: #2B2D2E; 
+$gray-1000: #111111;   
+$black:    #000;
+
+$white-light: #FCFDFD;
+$white-normal: #F9FAFB;
+$white-normal-active: #EBEEF2;
+
+$text: $gray-800;
+
+
+$blue:    #219EBC;
+$blue-light: #339DFF;
+$indigo:  #6610f2;
+$purple:  #c9b0d2;
+$pink:    #FD8B7D;
+$pink-dark: #FF385C;
+$red-100: #FEEAEA;
+$red:     #EE2A2A;
+$red-light:     #EB5757;
+$orange:  #FFD657;
+$yellow:  #e2b93b;
+$green:   #44AA00;
+$turquose:   #1D758D;
+$teal:    #20c997;
+$cyan:    #17a2b8;
+$brown: #55392A;
+$gray : $gray-800;
+
+
+$green-50: #ECF7E6;
+$green-100: #cfe7c4;
+$green-500: #64B341;
+$green-600: $green;
+$green-700: #477F2E;
+$green-800: #376224;
+$green-900: #004B1F;
+
+
+$warning-light : #fcf8eb;
+$warning-normal-active: #B5942F;
+$warning-normal-hover: #CBA735;
+$warning-dark-hover: #886F23;
+
+$info-light: #EAF2FD;
+$info-normal: #2F80ED;
+
+$surface-normal-active: #EBEEF2;
+$surface-normal: #F9FAFB;
+
+$surface-light: #FCFDFD;
+
+$primary-hover : #82C654;
+
+$primary:       $black;
+$primary-light: #ECF7E6;
+$primary-dark : #307900;
+$secondary:     $gray;
+$success:       $green;
+$info:          $cyan;
+$warning:       $yellow;
+$danger:        $red;
+$light:         $gray-100;
+$dark:          $gray-800;
+
+
+// Components
+//
+// Define common padding and border radius sizes and more.
+
+
+$transition-base:             all .3s ease-in-out;
+$transition-fade:             opacity .15s linear;
+$transition-collapse:         height .35s ease;
+
